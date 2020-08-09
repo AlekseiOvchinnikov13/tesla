@@ -13,10 +13,15 @@ $(function () {
     });
 
     $('.header-btn').on('click', function () {
-       $('.menu').addClass('active');
+        $('.menu').addClass('active');
     });
 
     $('.close-btn').on('click', function () {
         $('.menu').removeClass('active');
+    });
+
+    $('.num').counterUp({
+        delay: 10,
+        time: 1500
     });
 });
