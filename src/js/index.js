@@ -1,10 +1,28 @@
-$(function () {
-    /*new WOW({
+document.addEventListener('DOMContentLoaded', function () {
+    $('.statistics-items').waypoint(function () {
+        count()
+    }, {
+        offset: 'bottom-in-view'
+    })
+
+    document.querySelector('#how-price').href = 'https://www.tesla.com/roadster/reserve#payment';
+    var settings = document.querySelector('#settings');
+    document.querySelector('#test-drive').href = 'https://www.tesla.com/drive';
+    document.querySelector('#news').href = 'https://www.tesla.com/blog';
+    document.querySelector('#contacts').href = 'https://www.tesla.com/contact';
+    settings.addEventListener('click', function (e) {
+        e.preventDefault();
+        stateMenu();
+        document.querySelector('.statistics-items').scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    });
+
+    new WOW({
         animateClass: 'animate__animated'
-    }).init();*/
-    /*$('.header-arrows').on('click', function() {
-        $('html,body').animate({scrollTop:$('.surf').offset().top+"px"},{duration:1E3});
-    });*/
+    }).init();
+
     $('.slider').slick({
         arrows: false,
         dots: true,
@@ -13,15 +31,26 @@ $(function () {
     });
 
     $('.header-btn').on('click', function () {
-        $('.menu').addClass('active');
+        stateMenu();
     });
 
-    $('.close-btn').on('click', function () {
-        $('.menu').removeClass('active');
-    });
+    function stateMenu() {
+        $('.menu').toggleClass('active');
+        $('.header-btn').toggleClass('opened')
+    }
 
-    $('.num').counterUp({
-        delay: 10,
-        time: 1500
-    });
+    function count() {
+        $('.num').each(function () {
+            var $this = $(this);
+            $({Counter: $this.text()}).animate({
+                Counter: $this.data('to')
+            }, {
+                duration: 2500,
+                easing: 'swing',
+                step: function () {
+                    $this.text(Math.ceil(this.Counter));
+                }
+            });
+        });
+    }
 });

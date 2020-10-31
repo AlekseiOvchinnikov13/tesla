@@ -1,4 +1,13 @@
-@media (max-width: 1220px) {
+@media (max-width: 1366px) {
+  .slider-top .slick-dots {
+    margin: -42px auto 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .slider-top .slick-dots {
+    margin: -55px auto 0;
+  }
   .advantages-text {
     padding-left: 20px;
   }
@@ -8,19 +17,19 @@
 }
 
 @media (max-width: 1020px) {
-  .design-row{
+  .design-row {
     display: block;
   }
-  .design-row-item{
+  .design-row-item {
     max-width: 100%;
   }
-  .design-row-item-text{
+  .design-row-item-text {
     max-width: 100%;
   }
-  .design-images, .design-row{
+  .design-images, .design-row {
     margin-bottom: 50px;
   }
-  .design-row-item{
+  .design-row-item {
     margin-bottom: 30px;
     padding-right: 0;
   }
@@ -62,12 +71,12 @@
   .advantages-img img {
     width: 100%;
   }
-  .design-row-item-text{
+  .design-row-item-text {
     font-size: 20px;
   }
 }
 
-@media (max-width: 410px){
+@media (max-width: 410px) {
   .header-content-title {
     font-size: 80px;
     margin-top: 20px;
@@ -76,7 +85,7 @@
 }
 
 @media (max-width: 410px) {
-  body{
+  body {
     font-size: 20px;
     line-height: 24px;
   }
@@ -109,8 +118,14 @@
   .video {
     margin-bottom: 50px;
   }
-  .advantages-text{
+  .advantages-text {
     width: 100%;
+  }
+}
+
+@media (max-width: 320px) and (max-height: 480px) {
+  .slider-top .slick-dots {
+    margin: -40px auto 0;
   }
 }
 
